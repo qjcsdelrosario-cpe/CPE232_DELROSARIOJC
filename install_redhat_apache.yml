@@ -1,0 +1,13 @@
+---
+- hosts: 192.168.56.115
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    yum:
+      name: httpd
+      state: present
+  - name: https status
+    service:
+     name: httpd
+     state: started
